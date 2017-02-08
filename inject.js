@@ -162,21 +162,24 @@ function getString(){
     // remove extra div and article tags from the begining
     html = html.replace("</article></div>", "");
 
-    /*
+    
+    // Get the indexes of See also , Footnotes, References, External Links and other redundant headings
     var see = html.indexOf("See also") === -1 ? html.length : html.indexOf("See also");
     var ref = html.indexOf("References") === -1 ? html.length : html.indexOf("References");
     var ext = html.indexOf("External links") === -1 ? html.length : html.indexOf("External links");
     var foot = html.indexOf("Footnotes") === -1 ? html.length : html.indexOf("Footnotes");
+    // store the minimum
     var min = Math.min(see, ref, ext, foot);
+    // if none of these are present in the document then -1 will be displayed
+    // so using ternary operator
     var index = min === -1 ? html.length : min; 
-
+    console.log("all",{see,ref,ext,foot});
     console.log(index);
-    // See also , Footnotes, References, External Links 
     
-
+    // get string only till useful content
     // append formatted string into innerDiv
-    // innerDiv.innerHTML = html.substring(0, index);*/
-    innerDiv.innerHTML = html;
+    innerDiv.innerHTML = html.substring(0, index);
+    // innerDiv.innerHTML = html;
     
     // add all inner divs to un/hide
     hiders = Array.from(innerDiv.querySelectorAll("div"));
