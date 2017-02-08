@@ -14,6 +14,11 @@
   width: 30px;
 }
 
+.close-span:hover{
+  color: #166888;
+  background: white;
+}
+
 .inner-div{
   position: relative;
   /*padding: 0 50px 0 50px;*/
@@ -24,6 +29,10 @@
   width: 100%;
   text-align: justify;
   font-size: 16px;
+}
+
+h2{
+  cursor: pointer;
 }
 
 .hide{
