@@ -116,7 +116,7 @@ function getString(){
   
   // transition side panel
   div.style.width = "350px";
-  div.style.height = "70vh";
+  div.style.height = "80vh";
   div.style.opacity = "1";
   div.style.padding = "50px 10px 0 10px";
   div.style.transition = `opacity 0.5s ease-in-out`;
@@ -151,7 +151,7 @@ function getString(){
                 if(child.tagName === "P")
                   return `<p>${child.innerText}</p>`; 
                 else if(child.tagName === "H2")
-                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2>${child.innerText}</h2><article class="hide">`;
+                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
                 else if(child.tagName === "H3")
                   return `<h3>${child.innerText}</h3>`;
                 else  return `<ul>${child.innerText}</ul>`;
@@ -173,8 +173,8 @@ function getString(){
     // if none of these are present in the document then -1 will be displayed
     // so using ternary operator
     var index = min === -1 ? html.length : min; 
-    console.log("all",{see,ref,ext,foot});
-    console.log(index);
+    // console.log("all",{see,ref,ext,foot});
+    // console.log(index);
     
     // get string only till useful content
     // append formatted string into innerDiv
