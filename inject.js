@@ -5,6 +5,7 @@
 // get a settings page. 
 // disable on a form or input element
 // run only when double click gives a string 
+// select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
 
 
 // side panel
@@ -83,7 +84,6 @@ function closePanel(){
   div.style.width = "0";
   div.style.opacity = "0";
   div.style.padding = "0";
-  // div.style.transform = "translateY(0)";
   innerDiv.style.padding = 0;
 }
 
@@ -102,14 +102,7 @@ function unhide(e){
 handle.addEventListener("mousedown", initResize);
 // close the side panel
 closeSpan.addEventListener("click", closePanel);
-// un/hide headings
 
-// function beginHiders(){
-  // hiders.forEach( hider => {
-    // console.log("hider");
-    // hider.addEventListener("click", unhide)
-  // });
-// }
 
 function getString(){
   console.log(window.getSelection().toString());
@@ -118,7 +111,7 @@ function getString(){
   div.style.width = "350px";
   div.style.height = "80vh";
   div.style.opacity = "1";
-  div.style.padding = "50px 10px 0 10px";
+  div.style.padding = "60px 10px 0 10px";
   div.style.transition = `opacity 0.5s ease-in-out`;
   div.style.top = window.scrollY + 60 +"px";
   // div.style.transition = `translateY 1s cubic-bezier(0.68, -0.85, 0.265, 1.55)`;
