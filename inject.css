@@ -7,11 +7,11 @@
   background: #166888;
   border-radius: 50%;
   margin: 0;
-  padding: 5px;
+  padding: 0px;
   color: white;
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,7 @@
 }
 
 .inner-div{
+  /*margin: auto 10px;*/
   position: relative;
   /*padding: 0 50px 0 50px;*/
   overflow-y: auto;
@@ -34,10 +35,22 @@
   font-size: 16px;
 }
 
+.inner-div p, h1, h2 , h3, article{
+  margin-bottom: 10px;
+	color: wheat;
+	text-decoration: none;
+  border: none;
+}
+
 .heading2{
   cursor: pointer;
   color: wheat;
   font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.heading3{
+  font-size: 20px;
 }
 
 .hide{

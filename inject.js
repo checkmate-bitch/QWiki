@@ -6,6 +6,7 @@
 // disable on a form or input element
 // run only when double click gives a string 
 // select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
+// place a (less..) or up arrow/triangle on the bottom when a hidden heading is expanded to indicate hide again feature from bottom 
 
 
 // side panel
@@ -109,7 +110,7 @@ function getString(){
   
   // transition side panel
   div.style.width = "350px";
-  div.style.height = "80vh";
+  div.style.height = "75vh";
   div.style.opacity = "1";
   div.style.padding = "60px 10px 0 10px";
   div.style.transition = `opacity 0.5s ease-in-out`;
@@ -146,7 +147,7 @@ function getString(){
                 else if(child.tagName === "H2")
                   return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
                 else if(child.tagName === "H3")
-                  return `<h3>${child.innerText}</h3>`;
+                  return `<h3 class="heading3">${child.innerText}</h3>`;
                 else  return `<ul>${child.innerText}</ul>`;
               })
               .join("")
