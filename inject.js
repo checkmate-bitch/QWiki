@@ -138,6 +138,12 @@ function getString(){
   
   // get the data, format it and put it in the side panel 
   $.getJSON(url, data => {
+
+    // If no result returned
+    if(!data.query){
+      alert("No result for the term");
+      return;
+    }
     
     // get the markup in a div container which gives htmlcollection[] object
     innerDiv.innerHTML = data.parse.text["*"];
