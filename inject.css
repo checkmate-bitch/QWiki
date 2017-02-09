@@ -1,4 +1,4 @@
-.close-span{
+.extension-close-span{
   position: absolute;
   right: 5px;
   top: 5px;
@@ -17,45 +17,49 @@
   align-items: center;
 }
 
-.close-span:hover{
+.extension-close-span:hover{
   color: #166888;
   background: white;
 }
 
-.inner-div{
-  /*margin: auto 10px;*/
-  position: relative;
-  /*padding: 0 50px 0 50px;*/
-  overflow-y: auto;
-  color: wheat;
-  /*background: #f5f5f5;*/
-  height: 90%;
-  width: 100%;
-  text-align: justify;
-  font-size: 16px;
+.extension-inner-div{
+  /*position: relative;*/
+  /*overflow-y: auto;*/
+  /*color: wheat;*/
+  /*height: 90%;*/
+  /*width: 100%;*/
+  /*text-align: justify;*/
+  /*font-size: 16px;*/
 }
 
-.inner-div p, h1, h2 , h3, article{
+.extension-inner-div p, h1, h2 , h3, article{
   margin-bottom: 10px;
-	color: wheat;
-	text-decoration: none;
-  border: none;
-}
-
-.heading2{
-  cursor: pointer;
-  color: wheat;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.heading3{
-  font-size: 20px;
+	/*color: wheat !important;*/
+	/*text-decoration: none !important;*/
+  /*border: none !important;*/
 }
 
 .hide{
 	display: none;
 }
+
+.para-graph{
+  color: wheat !important;
+  font-size: 16px !important;
+}
+
+.heading2{
+  cursor: pointer;
+  color: wheat !important;
+  font-size: 28px !important;
+  margin-bottom: 15px !important;
+}
+
+.heading3{
+  font-size: 20px !important;
+  color: wheat !important;
+}
+
 
 /*
 .divBackground{

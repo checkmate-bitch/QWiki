@@ -21,10 +21,10 @@ var closeSpan = document.createElement("span");
 var hiders;
 
 // add class close-span
-closeSpan.classList.add("close-span");
+closeSpan.classList.add("extension-close-span");
 
 // add class inner-div
-innerDiv.classList.add("inner-div");
+innerDiv.classList.add("extension-inner-div");
 
 // format close button
 closeSpan.innerHTML = "&#10006;";
@@ -38,6 +38,15 @@ Object.assign( handle.style, {
                                 width: "10px",
                                 height: "10px",
                                 background: "red"
+                              });
+
+// format inner div
+Object.assign( innerDiv.style, {
+                                  position: "relative",
+                                  overflowY: "auto",
+                                  height: "90%",
+                                  width: "100%",
+                                  textAlign: "justify"
                               });
 
 // format side panel
@@ -64,8 +73,8 @@ document.body.appendChild(div);
 function startResize(e){
   e.preventDefault();
   // console.log(e.clientY, div.offsetTop);
-  div.style.width = (window.innerWidth - e.clientX - 50) + "px";
-  div.style.height = (e.clientY - 100) + "px";
+  div.style.width = (window.innerWidth - e.clientX) + "px";
+  div.style.height = (e.clientY - 60) + "px";
 }
 
 // remove events when up
@@ -143,7 +152,7 @@ function getString(){
     // format the array, convert it into string
     var html = children.map( child => {
                 if(child.tagName === "P")
-                  return `<p>${child.innerText}</p>`; 
+                  return `<p class="para-graph">${child.innerText}</p>`; 
                 else if(child.tagName === "H2")
                   return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
                 else if(child.tagName === "H3")
@@ -174,6 +183,13 @@ function getString(){
     // append formatted string into innerDiv
     innerDiv.innerHTML = html.substring(0, index);
     // innerDiv.innerHTML = html;
+
+    // add css to innerDiv children
+    /*
+    var children = innerDiv.children;
+    for(var i= 0; i< children.length; i++){
+      children[i].style.color = "wheat";
+    }*/
     
     // add all inner divs to un/hide
     hiders = Array.from(innerDiv.querySelectorAll("div"));
