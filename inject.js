@@ -73,8 +73,8 @@ document.body.appendChild(div);
 function startResize(e){
   e.preventDefault();
   // console.log(e.clientY, div.offsetTop);
-  div.style.width = (window.innerWidth - e.clientX) + "px";
-  div.style.height = (e.clientY - 60) + "px";
+  div.style.width = (window.innerWidth - e.clientX - 30) + "px";
+  div.style.height = (e.clientY - 100) + "px";
 }
 
 // remove events when up
@@ -121,9 +121,9 @@ function getString(){
   div.style.width = "350px";
   div.style.height = "75vh";
   div.style.opacity = "1";
-  div.style.padding = "60px 10px 0 10px";
+  div.style.padding = "50px 10px 0 10px";
   div.style.transition = `opacity 0.5s ease-in-out`;
-  div.style.top = window.scrollY + 60 +"px";
+  div.style.top = window.scrollY + 55 +"px";
   // div.style.transition = `translateY 1s cubic-bezier(0.68, -0.85, 0.265, 1.55)`;
 
   // inner div padding
