@@ -10,12 +10,7 @@
 	"default_popup" : "Wiki_Viewer.html",
     "default_title" : "QWiki"
 	},
-/*
-  "background" : {
-    "scripts" : ["background.js"],
-    "persistent" : false;
-  }
-*/
+	
   "content_scripts" : [{
   	"css": ["inject.css"],
     "matches": ["http://*/*" , "https://*/*"],
