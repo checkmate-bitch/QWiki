@@ -157,7 +157,7 @@ function getString(){
                   return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
                 else if(child.tagName === "H3")
                   return `<h3 class="heading3">${child.innerText}</h3>`;
-                else  return `<ul>${child.innerText}</ul>`;
+                else  return `<ul class="para-graph">${child.innerText}</ul>`;
               })
               .join("")
               .replace(/\[\w+\]/g, "");
