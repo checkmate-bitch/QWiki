@@ -149,7 +149,7 @@ function getString(){
   // get the data, format it and put it in the side panel 
   $.getJSON(url, data => {
 
-    console.log(data);
+    // console.log(data);
 
     // If no result returned
     if(data.error){
@@ -235,3 +235,9 @@ function detectKeys(e){
 
 // detect shortcut / hotkey and fire getString
 document.addEventListener("keydown", detectKeys);
+
+// receive message from background.js
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+    // console.log({request, sender, sendResponse});
+    getString();
+})
