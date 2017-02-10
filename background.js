@@ -12,7 +12,7 @@ function getQWiki(info,tab) {
 }
 
 chrome.contextMenus.create({
-  title: "Search: %s", 
+  title: "QWiki: %s", 
   contexts:["selection"], 
   onclick: getQWiki
 });
