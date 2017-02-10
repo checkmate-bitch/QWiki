@@ -113,9 +113,8 @@ handle.addEventListener("mousedown", initResize);
 // close the side panel
 closeSpan.addEventListener("click", closePanel);
 
-
-function getString(){
-  console.log(window.getSelection().toString());
+// side panel styling
+function styleSidePanel(){
   
   // transition side panel
   div.style.width = "350px";
@@ -129,21 +128,36 @@ function getString(){
   // inner div padding
   innerDiv.style.padding = "0 10px 0 10px";
 
+}
+
+
+function getString(){
+
+  console.log(window.getSelection().toString());
+  
   // get the word on which the event double click triggered
   var val = window.getSelection().toString();
 
+  // format val for spaces
+  val = val.trim().replace(/\s/g, "_");
+  console.log("format value: ", val);
+
   // url to get data from
-  var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&page="+val+"&prop=text&redirects=1"
+  var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&page="+val+"&prop=text&redirects=1";
 
   
   // get the data, format it and put it in the side panel 
   $.getJSON(url, data => {
 
+    console.log(data);
+
     // If no result returned
-    if(!data.query){
+    if(data.error){
       alert("No result for the term");
       return;
     }
+
+    styleSidePanel();
     
     // get the markup in a div container which gives htmlcollection[] object
     innerDiv.innerHTML = data.parse.text["*"];
@@ -209,3 +223,15 @@ function getString(){
 }
 
 document.addEventListener("dblclick" , getString);
+
+function detectKeys(e){
+  // console.log(e);
+  if(e.shiftKey && e.altKey && e.which === 81){
+    console.log("shortcut activate");
+    // console.log(window.getSelection().toString());
+    getString();
+  }
+}
+
+// detect shortcut / hotkey and fire getString
+document.addEventListener("keydown", detectKeys);
