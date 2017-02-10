@@ -3,11 +3,11 @@
 
 	"name" : "QWiki",
 	"description" : "Don't know what that word is? Want to know more about some term on a page?
-					 Just double click the word and get the information you seek.", 
+					Just double click the word and get the information you seek.", 
 	"version" : "1.0",
 
 	"browser_action" : {
-	"default_popup" : "Wiki_Viewer.html",
+  	"default_popup" : "Wiki_Viewer.html",
     "default_title" : "QWiki"
 	},
 	
@@ -16,6 +16,15 @@
     "matches": ["http://*/*" , "https://*/*"],
     "js" : ["jquery.min.js" , "inject.js"]
   }],
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Q"
+      },
+      "description": "open popup"
+    }
+  },
 
 	"permissions" : [
 		"activeTab",
