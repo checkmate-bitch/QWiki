@@ -1,10 +1,8 @@
-// add : select a text and press a shortcut key or right click option to get the wiki for the selected text 
 // implement drag ? good feature or not?
 // set opacity according to input range
 // detect the body background and set your background accordingly to suit asthetic 
 // get a settings page. 
 // disable on a form or input element
-// run only when double click gives a string 
 // select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
 // place a (less..) or up arrow/triangle on the bottom when a hidden heading is expanded to indicate hide again feature from bottom 
 
@@ -153,7 +151,7 @@ function getString(){
 
     // If no result returned
     if(data.error){
-      alert("No result for the term");
+      alert("No result for "+val);
       return;
     }
 
@@ -224,6 +222,7 @@ function getString(){
 
 document.addEventListener("dblclick" , getString);
 
+/*
 function detectKeys(e){
   // console.log(e);
   if(e.shiftKey && e.altKey && e.which === 81){
@@ -231,13 +230,13 @@ function detectKeys(e){
     // console.log(window.getSelection().toString());
     getString();
   }
-}
+}*/
 
 // detect shortcut / hotkey and fire getString
-document.addEventListener("keydown", detectKeys);
+// document.addEventListener("keydown", detectKeys);
 
 // receive message from background.js
-chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
-    // console.log({request, sender, sendResponse});
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    console.log(request);
     getString();
 })
