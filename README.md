@@ -6,4 +6,4 @@ Well, that's what this extension does.
   
 ## Features  
 1) Double click the term you want to search ( for single words )  
-2) Select a string of words and use hotkey - Alt+Shift+q or right click and select QWiki from context menu
+2) Select a string of words and use hotkey combination or right click and select QWiki from context menu
