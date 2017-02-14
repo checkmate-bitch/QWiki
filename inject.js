@@ -134,16 +134,15 @@ function getString(){
   console.log(window.getSelection().toString());
   
   // get the word on which the event double click triggered
-  var val = window.getSelection().toString();
+  var original_val = window.getSelection().toString();
 
   // format val for spaces
-  val = val.trim().replace(/\s/g, "_");
+  var val = original_val.trim().replace(/\s/g, "_");
   console.log("format value: ", val);
 
   // url to get data from
   var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&page="+val+"&prop=text&redirects=1";
 
-  
   // get the data, format it and put it in the side panel 
   $.getJSON(url, data => {
 
@@ -182,7 +181,7 @@ function getString(){
 
     // remove extra div and article tags from the begining
     html = html.replace("</article></div>", "");
-
+    html = `<h1 class="extension-panel-h1"><a href="https://en.wikipedia.org/wiki/${val}" target="_blank">${original_val}</a></h1>` + html;    
     
     // Get the indexes of See also , Footnotes, References, External Links and other redundant headings
     var see = html.indexOf("See also") === -1 ? html.length : html.indexOf("See also");
@@ -199,9 +198,10 @@ function getString(){
     
     // get string only till useful content
     // append formatted string into innerDiv
-    innerDiv.innerHTML = html.substring(0, index);
-    // innerDiv.innerHTML = html;
 
+    innerDiv.innerHTML = html.substring(0, index);
+
+    // innerDiv.innerHTML = html;
     // add css to innerDiv children
     /*
     var children = innerDiv.children;

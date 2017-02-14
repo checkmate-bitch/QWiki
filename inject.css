@@ -1,14 +1,29 @@
+.extension-panel-h1{
+  font-size: 32px;
+}
+
+.extension-panel-h1 > a{
+  color: #f1f1f1 !important;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.extension-panel-h1 > a:hover{
+  color: coral !important;
+  text-decoration: none;
+}
+
 .extension-close-span{
   position: absolute;
   right: 5px;
   top: 5px;
   font-size: 20px;
   text-align: center;
-  background: #166888;
+  background: #166888 !important;
   border-radius: 50%;
   margin: 0;
   padding: 0px;
-  color: white;
+  color: white !important;
   cursor: pointer;
   height: 35px;
   width: 35px;
@@ -18,8 +33,8 @@
 }
 
 .extension-close-span:hover{
-  color: #166888;
-  background: white;
+  color: #166888 !important;
+  background: white !important;
 }
 
 .extension-inner-div{
