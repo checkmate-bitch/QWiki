@@ -40,6 +40,7 @@
 
 	"permissions": [
 		"activeTab",
+    "tabs",
     "contextMenus",
     "https://en.wikipedia.org/*"
 	]
