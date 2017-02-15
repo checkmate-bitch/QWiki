@@ -5,6 +5,7 @@
 // disable on a form or input element
 // select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
 // place a (less..) or up arrow/triangle on the bottom when a hidden heading is expanded to indicate hide again feature from bottom 
+// h1,2,...6 can have a,i others inside it. remove them
 
 
 // side panel
@@ -43,7 +44,7 @@ Object.assign( innerDiv.style, {
                                   position: "relative",
                                   overflowY: "auto",
                                   height: "90%",
-                                  width: "100%",
+                                  width: "99%",
                                   textAlign: "justify"
                               });
 
@@ -115,9 +116,10 @@ closeSpan.addEventListener("click", closePanel);
 function styleSidePanel(){
   
   // transition side panel
-  div.style.width = "350px";
+  div.style.width = "400px";
   div.style.height = "75vh";
   div.style.opacity = "1";
+  div.style.borderRadius = "3px";
   div.style.padding = "50px 10px 0 10px";
   div.style.transition = `opacity 0.5s ease-in-out`;
   div.style.top = window.scrollY + 55 +"px";
@@ -174,14 +176,16 @@ function getString(){
                   return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
                 else if(child.tagName === "H3")
                   return `<h3 class="heading3">${child.innerText}</h3>`;
-                else  return `<ul class="para-graph">${child.innerText}</ul>`;
-              })
+                else if(child.tagName === "UL")
+                  return `<ul class="para-graph">${child.innerText}</ul>`;
+                else return;
+              }) 
               .join("")
               .replace(/\[\w+\]/g, "");
 
     // remove extra div and article tags from the begining
     html = html.replace("</article></div>", "");
-    html = `<h1 class="extension-panel-h1"><a href="https://en.wikipedia.org/wiki/${val}" target="_blank">${original_val}</a></h1>` + html;    
+    html = `<h1 class="extension-panel-h1"><a title="link to Wiki" href="https://en.wikipedia.org/wiki/${val}" target="_blank">${original_val}</a></h1>` + html;    
     
     // Get the indexes of See also , Footnotes, References, External Links and other redundant headings
     var see = html.indexOf("See also") === -1 ? html.length : html.indexOf("See also");
