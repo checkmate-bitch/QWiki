@@ -1,19 +1,19 @@
-.extension-panel-h1{
+.qwiki-extension-panel-h1{
   font-size: 32px;
 }
 
-.extension-panel-h1 > a{
+.qwiki-extension-panel-h1 > a{
   color: #f1f1f1 !important;
   text-transform: capitalize;
   text-decoration: none;
 }
 
-.extension-panel-h1 > a:hover{
+.qwiki-extension-panel-h1 > a:hover{
   color: coral !important;
   text-decoration: none;
 }
 
-.extension-close-span{
+.qwiki-extension-close-span{
   position: absolute;
   right: 5px;
   top: 5px;
@@ -32,13 +32,42 @@
   align-items: center;
 }
 
-.extension-close-span:hover{
+.qwiki-extension-close-span:hover{
   color: #166888 !important;
   background: white !important;
 }
 
+.qwiki-extension-handle{
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: red;
+}
+
+.qwiki-extension-inner-div{
+  position: relative;
+  overflow-y: auto;
+  height: 90%;
+  width: 99%;
+  text-align: justify;
+}
+
+.qwiki-extension-outer-div{
+  position: absolute;
+  right: 0;
+  width: 0;
+  background: #2f4f4f;
+  opacity: 0;
+  overflow: hidden;
+  box-shadow: -8px 5px 20px -4px rgba(122,119,140,0.71);
+  z-index: 99999;
+}
+
 .hide{
-	display: none;
+  display: none;
 }
 
 .para-graph{
