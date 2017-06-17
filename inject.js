@@ -1,22 +1,22 @@
+// a preferance or a settings page
+// detect the body background and set your background accordingly to suit asthetic 
 // implement drag ? good feature or not?
 // set opacity according to input range
-// detect the body background and set your background accordingly to suit asthetic 
-// get a settings page. 
 // disable on a form or input element
 // select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
 // place a (less..) or up arrow/triangle on the bottom when a hidden heading is expanded to indicate hide again feature from bottom 
 // h1,2,...6 can have a,i others inside it. remove them
 
 
-// side panel
+// side panel or all container div
 var div = document.createElement("div");
-// resize handler
+// resize handler or red button to resize
 var handle = document.createElement("div");
-// content 
+// content div or inner div where text displayed
 var innerDiv = document.createElement("div");
-// close span
+// close span or close button
 var closeSpan = document.createElement("span");
-// divs to un/hide the text
+// divs to un/hide the text in inner div
 var hiders;
 
 // add css to outer container div that holds everything
@@ -80,8 +80,8 @@ div.appendChild(handle);
 div.appendChild(innerDiv);
 document.body.appendChild(div);
 
-// change the width and height of side panel according to the mouse position 
-// when click and drag on resize handle
+// change the width and height of side panel or container according to the mouse position 
+// when click and drag on red resize handle
 function startResize(e){
   e.preventDefault();
   // console.log(e.clientY, div.offsetTop);
@@ -116,8 +116,8 @@ function unhide(e){
   if(e.target.localName == "h2"){
     var hide = e.srcElement.parentElement.children[1];
     if(!hide.classList.length)
-      hide.classList.add("hide")
-    else hide.classList.remove("hide");
+      hide.classList.add("qwiki-extension-hide")
+    else hide.classList.remove("qwiki-extension-hide");
   }
 }
 
@@ -127,6 +127,7 @@ handle.addEventListener("mousedown", initResize);
 closeSpan.addEventListener("click", closePanel);
 
 // side panel styling
+// needed whenever container closed and reopened
 function styleSidePanel(){
   
   // transition side panel
@@ -179,7 +180,7 @@ function getString(){
 
     // console.log(innerDiv.children[0].children);
 
-    // convert the htmlcollection to array and remove unwanted properties
+    // convert the htmlcollection datatype to array and remove unwanted properties
     var children = Array.from(innerDiv.children[0].children);
         children = children.filter( child => {
           // console.log(child.tagName);
@@ -187,15 +188,16 @@ function getString(){
         });
 
     // format the array, convert it into string
+    // parser that removes wiki markup and adds html
     var html = children.map( child => {
                 if(child.tagName === "P")
-                  return `<p class="para-graph">${child.innerText}</p>`; 
+                  return `<p class="qwiki-extension-para-graph">${child.innerText}</p>`; 
                 else if(child.tagName === "H2")
-                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="heading2">${child.innerText}</h2><article class="hide">`;
+                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="qwiki-extension-heading2">${child.innerText}</h2><article class="qwiki-extension-hide">`;
                 else if(child.tagName === "H3")
-                  return `<h3 class="heading3">${child.innerText}</h3>`;
+                  return `<h3 class="qwiki-extension-heading3">${child.innerText}</h3>`;
                 else if(child.tagName === "UL")
-                  return `<ul class="para-graph">${child.innerText}</ul>`;
+                  return `<ul class="qwiki-extension-para-graph">${child.innerText}</ul>`;
                 else return;
               }) 
               .join("")
