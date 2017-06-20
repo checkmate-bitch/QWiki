@@ -1,10 +1,10 @@
 # QWiki 
-***
+
 Search for any word or a string of words on your current page and get information about it directly from Wikipedia
   
   &nbsp;
-## Table of Changes
-***
+## Table of Contents
+
 1. <a href="#id1" id="install">Installation</a>
 2. <a href="#id2" id ="require">Requirements</a>
 3. <a href="#id3" id="use">Usagae</a>
@@ -13,31 +13,32 @@ Search for any word or a string of words on your current page and get informatio
 6. <a href="#id6" id="contrib">Contributing</a>
 7. <a href="#id7" id="author">Author</a>
 &nbsp;
+&nbsp;
 
 ## <a href="#install" id="id1">1. Installation</a>
-___
+
 &nbsp;
 
 ## <a href="#require" id="id2">2. Requirements</a>
-___
+
 &nbsp;
 
 ## <a href="#use" id="id3">3. Usage</a>
-___
+
 &nbsp;
 
 ## <a href="#credit" id="id4">4. Credit</a>
-___
+
 &nbsp;
 
 ## <a href="#license" id="id5">5. License</a>
-___
+
 &nbsp;
 
 ## <a href="#contrib" id="id6">6. Contributing</a>
-___
+
 &nbsp;
 
 ## <a href="#author" id="id7">7. Author</a>
-___
+
 &nbsp;
