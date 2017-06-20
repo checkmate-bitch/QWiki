@@ -18,10 +18,12 @@ Search for any word or a string of words on your current page and get informatio
 ## <a href="#install" id="id1">1. Installation</a>
 
 &nbsp;
+From the web store : 
 
 ## <a href="#require" id="id2">2. Requirements</a>
 
 &nbsp;
+Works on Chrome and all chromium-based browsers.
 
 ## <a href="#use" id="id3">3. Usage</a>
 
@@ -30,10 +32,12 @@ Search for any word or a string of words on your current page and get informatio
 ## <a href="#credit" id="id4">4. Credit</a>
 
 &nbsp;
+[Wikipedia API](https://www.mediawiki.org/wiki/MediaWiki)
 
 ## <a href="#license" id="id5">5. License</a>
 
 &nbsp;
+MIT : [License](../LICENSE.md)
 
 ## <a href="#contrib" id="id6">6. Contributing</a>
 
@@ -42,3 +46,4 @@ Search for any word or a string of words on your current page and get informatio
 ## <a href="#author" id="id7">7. Author</a>
 
 &nbsp;
+Sawan Ashok 
