@@ -37,7 +37,7 @@ Works on Chrome and all chromium-based browsers.
 ## <a href="#license" id="id5">5. License</a>
 
 &nbsp;
-MIT : [License](../LICENSE.md)
+MIT : [License](https://github.com/checkmate-bitch/QWiki/LICENSE.md)
 
 ## <a href="#contrib" id="id6">6. Contributing</a>
 
