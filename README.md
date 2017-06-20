@@ -4,7 +4,7 @@ Search for any word or a string of words on your current page and get informatio
   
 ## Table of Changes
 ***
-1. [Installation](README.md/#installtion)
+1. <a href="#id1">Installation</a>
 2. [Requirements](README.md/#requirements)
 3. [Usagae]
 4. [Credit]
@@ -12,7 +12,7 @@ Search for any word or a string of words on your current page and get informatio
 6. [Contributing]
 7. [Author]
 
-## 1. Installation
+## <a href="" id="id1">1. Installation</a>
 ___
 
 ## 2. Requirements
