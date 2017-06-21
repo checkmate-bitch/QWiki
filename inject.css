@@ -93,28 +93,3 @@
   color: wheat !important;
   text-decoration: none !important;
 }
-
-
-/*
-.divBackground{
-  z-index: 1000;  
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 0px;
-  width: 100px;
-  background: red;
-  box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
-  transition: all 0.5s, opacity 0.2s, translate 0.3s;
-  transform-origin: 50% 0%;
-  display: flex;
-  justify-content: center;
-  opacity: 0.5;
-}
-
-.divBackground.open{
-  opacity: 1;
-  padding: 40px;
-  background: red;
-  padding: 20px;
-}*/

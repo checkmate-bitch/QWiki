@@ -35,50 +35,13 @@ handle.classList.add("qwiki-extension-handle");
 // format close button
 closeSpan.innerHTML = "&#10006;";
 
-// format resize handle
-/*
-Object.assign( handle.style, { 
-                                bottom: "0",
-                                left: "0",
-                                cursor: "nesw-resize",
-                                position: "absolute",
-                                width: "10px",
-                                height: "10px",
-                                background: "red"
-                              });
-*/
 
-// format inner div
-/*
-Object.assign( innerDiv.style, {
-                                  position: "relative",
-                                  overflowY: "auto",
-                                  height: "90%",
-                                  width: "99%",
-                                  textAlign: "justify"
-                              });
-*/
-
-// format side panel
-/*
-Object.assign(div.style , {
-                            position: "absolute",
-                            right: "0",
-                            width: "0",
-                            // background: "#28aadc",
-                            background: "#2f4f4f",
-                            opacity: "0",
-                            overflow: "hidden",
-                            boxShadow: "-8px 5px 20px -4px rgba(122,119,140,0.71)"
-                          });
-div.style.zIndex = "9999";
-*/
- 
 // add close button, resize handle and inner text container to main container. add this to body
 div.appendChild(closeSpan);
 div.appendChild(handle);
 div.appendChild(innerDiv);
 document.body.appendChild(div);
+
 
 // change the width and height of side panel or container according to the mouse position 
 // when click and drag on red resize handle
@@ -121,10 +84,12 @@ function unhide(e){
   }
 }
 
+
 // start resizing when click and drag
 handle.addEventListener("mousedown", initResize);
 // close the side panel
 closeSpan.addEventListener("click", closePanel);
+
 
 // side panel styling
 // needed whenever container closed and reopened
@@ -154,24 +119,23 @@ function getString(){
 
   // format val for spaces
   var val = original_val.trim().replace(/\s/g, "_");
-  console.log("format value: ", val);
 
   // url to get data from
-  // var url = "https://en.wikipedia.org/w/api.php?action=parse&format=json&page="+val+"&prop=text&redirects=1";
   var url = "https://en.wikipedia.org/w/api.php?action=parse&prop=text&page="+val+"&format=json&redirects=1";
 
   // get the data, format it and put it in the side panel 
   $.getJSON(url, data => {
 
-    // console.log(data);
+    styleSidePanel();
 
     // If no result returned
     if(data.error){
-      alert("No result for "+val);
+      // alert("No result for "+val);
+      console.log("lets see\n");
+      val = val.replace(/_/g, " ");
+      innerDiv.innerHTML = `<p style="color: #f1f1f1;">No result available for <h2 style="overflow-wrap : break-word; color : coral">${val}</h2> </p>`;
       return;
     }
-
-    styleSidePanel();
 
     // console.log(data.parse.text["*"]);
     
@@ -224,14 +188,6 @@ function getString(){
 
     innerDiv.innerHTML = html.substring(0, index);
 
-    // innerDiv.innerHTML = html;
-    // add css to innerDiv children
-    /*
-    var children = innerDiv.children;
-    for(var i= 0; i< children.length; i++){
-      children[i].style.color = "wheat";
-    }*/
-    
     // add all inner divs to un/hide
     hiders = Array.from(innerDiv.querySelectorAll("div"));
     hiders.forEach( hider => {
@@ -244,19 +200,6 @@ function getString(){
 }
 
 document.addEventListener("dblclick" , getString);
-
-/*
-function detectKeys(e){
-  // console.log(e);
-  if(e.shiftKey && e.altKey && e.which === 81){
-    console.log("shortcut activate");
-    // console.log(window.getSelection().toString());
-    getString();
-  }
-}*/
-
-// detect shortcut / hotkey and fire getString
-// document.addEventListener("keydown", detectKeys);
 
 // receive message from background.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
