@@ -43,7 +43,7 @@ MIT : [License](https://github.com/checkmate-bitch/QWiki/blob/master/LICENSE.md)
 ## <a href="#contrib" id="id6">6. Contributing</a>
 
 &nbsp;
-coming soon
+[EditorConfig](https://github.com/checkmate-bitch/QWiki/blob/master/.editorconfig)
 
 ## <a href="#author" id="id7">7. Author</a>
 
