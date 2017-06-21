@@ -7,7 +7,7 @@ Search for any word or a string of words on your current page and get informatio
 
 1. <a href="#id1" id="install">Installation</a>
 2. <a href="#id2" id ="require">Requirements</a>
-3. <a href="#id3" id="use">Usagae</a>
+3. <a href="#id3" id="use">Usage</a>
 4. <a href="#id4" id="credit">Credit</a>
 5. <a href="#id5" id="license">License</a>
 6. <a href="#id6" id="contrib">Contributing</a>
