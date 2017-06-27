@@ -30,14 +30,12 @@ Works on Chrome and all chromium-based browsers.
 ## <a href="#use" id="id3">3. Usage</a>
 
 &nbsp;
-
 There are 3 ways to use QWiki:
 1) Double-Click a word : Works only on single words.
 2) Select a string of words. Right Click on it and select QWiki.
 3) Select a string of words. Hit a hotkey combo of your preferance.
 
 &nbsp;
-
 ![Select Words](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img2.png "Select Words")
 
 &nbsp;
@@ -51,17 +49,11 @@ There are 3 ways to use QWiki:
 &nbsp;
 
 You can control the size of QWiki panel using the red handle on the bottom
-
-&nbsp;
-
 ![Control Size](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img5.png "Control Size")
 
 &nbsp;
 
 The sub-topics are collapsed by default. You can click to expand.
-
-&nbsp;
-
 ![Collapsed Sub-Topic](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img6.png "Collapsed Sub-Topic")
 
 &nbsp;
