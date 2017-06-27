@@ -1,6 +1,8 @@
 # QWiki 
 
 Search for any word or a string of words on your current page and get information about it directly from Wikipedia
+
+![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/long%20logo.jpg)
   
   &nbsp;
 ## Table of Contents
