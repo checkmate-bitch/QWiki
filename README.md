@@ -30,7 +30,51 @@ Works on Chrome and all chromium-based browsers.
 ## <a href="#use" id="id3">3. Usage</a>
 
 &nbsp;
-coming soon
+
+There are 3 ways to use QWiki:
+1) Double-Click a word : Works only on single words.
+2) Select a string of words. Right Click on it and select QWiki.
+3) Select a string of words. Hit a hotkey combo of your preferance.
+
+&nbsp;
+
+![Select Words](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img2.png "Select Words")
+
+&nbsp;
+
+![Right Click](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img3.png "Right Click")
+
+&nbsp;
+
+![Get results](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img4.png "Get results")
+
+&nbsp;
+
+You can control the size of QWiki panel using the red handle on the bottom
+
+&nbsp;
+
+![Control Size](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img5.png "Control Size")
+
+&nbsp;
+
+The sub-topics are collapsed by default. You can click to expand.
+
+&nbsp;
+
+![Collapsed Sub-Topic](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img6.png "Collapsed Sub-Topic")
+
+&nbsp;
+
+![Expanded Sub-Topic](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img7.png "Expanded Sub-Topic")
+
+&nbsp;
+ 
+Go to wikipedia directly by clicking the heading.
+![Go To Wikipedia](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img8.png "Go To Wikipedia")
+
+&nbsp;
+
 
 ## <a href="#credit" id="id4">4. Credit</a>
 
