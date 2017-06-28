@@ -1,7 +1,7 @@
 // side panel moves with scroll
 // a preferance or a settings page
 // detect the body background and set your background accordingly to suit asthetic 
-// implement drag ? good feature or not?
+// implement drag whole side panel? good feature or not?
 // set opacity according to input range
 // disable on a form or input element
 // select a text and shortcut (different) allows you to collect links from a page. when the work is done open the extension and fire all links or 1 link at a time.
