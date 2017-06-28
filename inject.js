@@ -1,3 +1,4 @@
+// side panel moves with scroll
 // a preferance or a settings page
 // detect the body background and set your background accordingly to suit asthetic 
 // implement drag ? good feature or not?
