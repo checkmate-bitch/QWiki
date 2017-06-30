@@ -2,8 +2,7 @@
   "manifest_version": 2,
 
   "name": "QWiki",
-  "description": "Don't know what that word is? Want to know more about some term on a page?
-  Just double click the word and get the information you seek.", 
+  "description": "Don't know what that word is? Want to know more about some term on a page? Just double click the word and get the information you seek.", 
   "version": "1.0",
 
   "background": {
