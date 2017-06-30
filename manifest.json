@@ -12,7 +12,8 @@
 
   "browser_action": {
     "default_popup": "Wiki_Viewer.html",
-    "default_title": "QWiki"
+    "default_title": "QWiki",
+    "default_icon": "images/icon16.png"
   },
 
   "content_scripts": [{
