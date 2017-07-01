@@ -1,8 +1,9 @@
 .qwiki-extension-panel-h1{
-  font-size: 32px;
+  font-size: 32px !important;
 }
 
 .qwiki-extension-panel-h1 > a{
+  font-size: 32px !important;
   color: #f1f1f1 !important;
   text-transform: capitalize;
   text-decoration: none;
