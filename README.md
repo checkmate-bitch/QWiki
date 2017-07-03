@@ -2,7 +2,7 @@
 
 Search for any word or a string of words on your current page and get information about it directly from Wikipedia
 
-![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/icon440_2.png")
+![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/iconlogo.jpg)
   
   &nbsp;
 ## Table of Contents
@@ -20,6 +20,7 @@ Search for any word or a string of words on your current page and get informatio
 ## <a href="#install" id="id1">1. Installation</a>
 
 &nbsp;
+![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/icon440_1.png)
 coming soon
 
 ## <a href="#require" id="id2">2. Requirements</a>
