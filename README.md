@@ -1,6 +1,6 @@
 # QWiki 
 
-Search for any word or a string of words on your current page and get information about it directly from Wikipedia
+Search for any word or a string of words on your current page from Wikipedia without leaving you page
 
 ![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/iconlogo.jpg)
   
