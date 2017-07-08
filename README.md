@@ -2,7 +2,7 @@
 
 Search for any word or a string of words on your current page from Wikipedia without leaving you page
 
-![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/iconlogo.jpg)
+![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/iconlogo.png)
   
   &nbsp;
 ## Table of Contents
