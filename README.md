@@ -21,7 +21,9 @@ Search for any word or a string of words on your current page from Wikipedia wit
 
 &nbsp;
 ![QWiki](https://github.com/checkmate-bitch/QWiki/blob/master/images/icon440_1.png)
-coming soon
+
+&nbsp;
+![QWiki Link to Chrome Web Store](https://chrome.google.com/webstore/detail/qwiki/lcedjopbmngfbhipnhelglpblmombagc)
 
 ## <a href="#require" id="id2">2. Requirements</a>
 
