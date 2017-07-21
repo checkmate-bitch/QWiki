@@ -3,7 +3,7 @@
 
   "name": "QWiki",
   "description": "Search for any word or a string of words on your current page from Wikipedia without leaving the page",
-  "version": "1.0",
+  "version": "1.1.0",
 
   "background": {
     "scripts": ["background.js"]
