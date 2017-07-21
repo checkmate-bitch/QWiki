@@ -11,14 +11,19 @@
 
 // side panel or all container div
 var div = document.createElement("div");
+
 // resize handler or red button to resize
 var handle = document.createElement("div");
+
 // content div or inner div where text displayed
 var innerDiv = document.createElement("div");
+
 // close span or close button
 var closeSpan = document.createElement("span");
+
 // divs to un/hide the text in inner div
 var hiders;
+
 // choose color scheme
 var qwikiColorPalette = {};
 qwikiColorPalette.paraColor = "#f5deb3";
@@ -27,6 +32,9 @@ qwikiColorPalette.closeBackground = "#166888";
 qwikiColorPalette.closeColor = "white";
 qwikiColorPalette.subHeading = "wheat"
 qwikiColorPalette.subHeadingH3 = "wheat"
+
+// isDbClick : enable/disable dbclick
+var qwikiIsDbClick = false;
 
 // add css to outer container div that holds everything
 div.classList.add("qwiki-extension-outer-div");
@@ -210,7 +218,10 @@ function getString(){
   });   
 }
 
-// document.addEventListener("dblclick" , getString);
+if(!qwikiIsDbClick) {
+    console.log("enter this dragon");
+    document.removeEventListener("dblclick" , getString);
+}
 
 // receive message from background.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -223,8 +234,8 @@ function restore_options() {
     // Use default value color = 'red' and likesColor = true.
     console.log("called inside inject restore called");
     // chrome.storage.sync.clear();
-    chrome.storage.sync.get("colors", function({ colors }) {
-        console.log({colors});
+    chrome.storage.sync.get([ "colors", "isDbClick" ], function({ colors, isDbClick }) {
+        // console.log(colors, "dbclick :", isDbClick);
         // console.log("qcp before", qwikiColorPalette);
         qwikiColorPalette.paraColor = colors.paraColor;
         qwikiColorPalette.mainHeading = colors.mainHeading;
@@ -233,6 +244,11 @@ function restore_options() {
         qwikiColorPalette.subHeading = colors.subHeading;
         qwikiColorPalette.subHeadingH3 = colors.subHeadingH3;
         div.style.background = colors.bgColor;
+
+        if(isDbClick) {
+            document.addEventListener("dblclick", getString);
+        }
+        // console.log("db click", qwikiIsDbClick);
         // console.log("qcp after", qwikiColorPalette);
     });
 }

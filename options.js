@@ -36,8 +36,11 @@ function save_colors() {
     colors.subHeading = document.getElementById("sub-head-font-color").value;
     colors.subHeadingH3 = document.getElementById("sub-head-font-color").value;
     console.log("current color palette", { colors });
+    var enableDbClick = document.getElementById("enable-db-click").checked;
+    // console.log("db click or not", enableDbClick);
     chrome.storage.sync.set({
-        "colors": colors
+        "colors": colors,
+        "isDbClick": enableDbClick
     }, function() {
         // Update status to let user know options were saved.
         // console.log("just trhying for", a);
@@ -53,7 +56,7 @@ function save_colors() {
 function restore_options() {
     console.log("restore called");
     // chrome.storage.sync.clear();
-    chrome.storage.sync.get("colors", function(items) {
+    chrome.storage.sync.get([ "colors", "isDbClick" ], function(items) {
         console.log( {items} );
         document.getElementById("bg-color").value = items.colors.bgColor;
         document.getElementById("para-font-color").value = items.colors.paraColor;
@@ -61,6 +64,7 @@ function restore_options() {
         document.getElementById("close-bg-color").value = items.colors.closeBackground;
         document.getElementById("close-font-color").value = items.colors.closeColor;
         document.getElementById("sub-head-font-color").value = items.colors.subHeading;
+        document.getElementById("enable-db-click").checked = items.isDbClick;
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
