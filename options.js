@@ -5,7 +5,6 @@ function save_scheme() {
     colors.bgColor = "#2f4f4f";
     colors.paraColor = "#f5deb3";
     colors.mainHeading = "#f1f1f1";
-    colors.closeBackground = "#166888";
     colors.closeColor = "#ffffff";
     colors.subHeading = "#f5deb3"
     colors.subHeadingH3 = "#f5deb3"
@@ -31,7 +30,6 @@ function save_colors() {
     colors.bgColor = document.getElementById("bg-color").value;
     colors.paraColor = document.getElementById("para-font-color").value;
     colors.mainHeading = document.getElementById("main-head-font-color").value;
-    colors.closeBackground = document.getElementById("close-bg-color").value;
     colors.closeColor = document.getElementById("close-font-color").value;
     colors.subHeading = document.getElementById("sub-head-font-color").value;
     colors.subHeadingH3 = document.getElementById("sub-head-font-color").value;
@@ -58,13 +56,14 @@ function restore_options() {
     // chrome.storage.sync.clear();
     chrome.storage.sync.get([ "colors", "isDbClick" ], function(items) {
         console.log( {items} );
-        document.getElementById("bg-color").value = items.colors.bgColor;
-        document.getElementById("para-font-color").value = items.colors.paraColor;
-        document.getElementById("main-head-font-color").value = items.colors.mainHeading;
-        document.getElementById("close-bg-color").value = items.colors.closeBackground;
-        document.getElementById("close-font-color").value = items.colors.closeColor;
-        document.getElementById("sub-head-font-color").value = items.colors.subHeading;
-        document.getElementById("enable-db-click").checked = items.isDbClick;
+        if(items.colors) {
+            document.getElementById("bg-color").value = items.colors.bgColor;
+            document.getElementById("para-font-color").value = items.colors.paraColor;
+            document.getElementById("main-head-font-color").value = items.colors.mainHeading;
+            document.getElementById("close-font-color").value = items.colors.closeColor;
+            document.getElementById("sub-head-font-color").value = items.colors.subHeading;
+            document.getElementById("enable-db-click").checked = items.isDbClick;
+        }
     });
 }
 document.addEventListener('DOMContentLoaded', restore_options);

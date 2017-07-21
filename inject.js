@@ -51,7 +51,6 @@ handle.classList.add("qwiki-extension-handle");
 
 // format close button
 closeSpan.innerHTML = "<span>&#10006;</span>";
-closeSpan.style.background = qwikiColorPalette.closeBackground;
 closeSpan.style.color = qwikiColorPalette.closeColor;
 
 
@@ -202,6 +201,9 @@ function getString(){
         // console.log("all",{see,ref,ext,foot});
         // console.log(index);
 
+        // add color to close button
+        document.querySelector(".qwiki-extension-close-span > span").style.color = qwikiColorPalette.closeColor;
+
         // get string only till useful content
         // append formatted string into innerDiv
 
@@ -219,7 +221,7 @@ function getString(){
 }
 
 if(!qwikiIsDbClick) {
-    console.log("enter this dragon");
+    // console.log("enter this dragon");
     document.removeEventListener("dblclick" , getString);
 }
 
@@ -232,20 +234,21 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 function restore_options() {
     // Use default value color = 'red' and likesColor = true.
-    console.log("called inside inject restore called");
+    // console.log("called inside inject restore called");
     // chrome.storage.sync.clear();
-    chrome.storage.sync.get([ "colors", "isDbClick" ], function({ colors, isDbClick }) {
-        // console.log(colors, "dbclick :", isDbClick);
+    chrome.storage.sync.get([ "colors", "isDbClick" ], function(items) {
+        // console.log(colors, "dbclick :", items.isDbClick);
         // console.log("qcp before", qwikiColorPalette);
-        qwikiColorPalette.paraColor = colors.paraColor;
-        qwikiColorPalette.mainHeading = colors.mainHeading;
-        qwikiColorPalette.closeBackground = colors.closeBackground;
-        qwikiColorPalette.closeColor = colors.closeColor;
-        qwikiColorPalette.subHeading = colors.subHeading;
-        qwikiColorPalette.subHeadingH3 = colors.subHeadingH3;
-        div.style.background = colors.bgColor;
-
-        if(isDbClick) {
+        if(items.colors) {
+            qwikiColorPalette.paraColor = items.colors.paraColor;
+            qwikiColorPalette.mainHeading = items.colors.mainHeading;
+            qwikiColorPalette.closeColor = items.colors.closeColor;
+            qwikiColorPalette.subHeading = items.colors.subHeading;
+            qwikiColorPalette.subHeadingH3 = items.colors.subHeadingH3;
+            div.style.background = items.colors.bgColor;
+            document.querySelector(".qwiki-extension-close-span > span").style.color = qwikiColorPalette.closeColor;
+        }
+        if(items.isDbClick) {
             document.addEventListener("dblclick", getString);
         }
         else {
