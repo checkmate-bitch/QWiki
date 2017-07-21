@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head><title>QWiki Options</title></head>
+    <body>
+
+        <div>
+            <h4>Choose any or all</h4>
+            <div>
+                <label>Choose Background Color: </label>
+                <input id="bg-color" type="color" value="#2f4f4f" />
+            </div>
+            <div>
+                <label>Choose Paragraph Font Color: </label>
+                <input id="para-font-color" type="color" value="#f5deb3" />
+            </div>
+            <div>
+                <label>Choose Main Heading Font Color: </label>
+                <input id="main-head-font-color" type="color" value="#f1f1f1" />
+            </div>
+            <div>
+                <label>Choose Sub-Heading Font Color: </label>
+                <input id="sub-head-font-color" type="color" value="#f5deb3" />
+            </div>
+            <div>
+                <label>Choose Close Button Color: </label>
+                <input id="close-font-color" type="color" value="#ffffff" />
+            </div>            
+            <div>
+                <label>Choose Close Button Background Color: </label>
+                <input id="close-bg-color" type="color" value="#166888" />
+            </div>        
+            <button id="save-each-color">Save</button>
+        </div>
+        <h4> ( or )</h4>
+        <button id="save-color-scheme">Use Default Color Scheme</button>
+
+        <div>
+            <label>
+                Enable Double Click : 
+                <input type="checkbox" id="enable-db-click">
+            </label>
+        </div>
+
+        <div id="status"></div>
+
+        <script src="options.js"></script>
+    </body>
+</html>

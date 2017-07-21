@@ -19,6 +19,14 @@ var innerDiv = document.createElement("div");
 var closeSpan = document.createElement("span");
 // divs to un/hide the text in inner div
 var hiders;
+// choose color scheme
+var qwikiColorPalette = {};
+qwikiColorPalette.paraColor = "#f5deb3";
+qwikiColorPalette.mainHeading = "#f1f1f1";
+qwikiColorPalette.closeBackground = "#166888";
+qwikiColorPalette.closeColor = "white";
+qwikiColorPalette.subHeading = "wheat"
+qwikiColorPalette.subHeadingH3 = "wheat"
 
 // add css to outer container div that holds everything
 div.classList.add("qwiki-extension-outer-div");
@@ -35,6 +43,8 @@ handle.classList.add("qwiki-extension-handle");
 
 // format close button
 closeSpan.innerHTML = "&#10006;";
+closeSpan.style.background = qwikiColorPalette.closeBackground;
+closeSpan.style.color = qwikiColorPalette.closeColor;
 
 
 // add close button, resize handle and inner text container to main container. add this to body
@@ -156,13 +166,13 @@ function getString(){
     // parser that removes wiki markup and adds html
     var html = children.map( child => {
                 if(child.tagName === "P")
-                  return `<p class="qwiki-extension-para-graph">${child.innerText}</p>`; 
+                  return `<p class="qwiki-extension-para-graph" style="color: ${qwikiColorPalette.paraColor} !important;">${child.innerText}</p>`; 
                 else if(child.tagName === "H2")
-                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="qwiki-extension-heading2">${child.innerText}</h2><article class="qwiki-extension-hide">`;
+                  return `</article></div><div id="${child.innerText.replace(/\[\w+\]/, "")}"><h2 class="qwiki-extension-heading2" style="color: ${qwikiColorPalette.subHeading} !important;">${child.innerText}</h2><article class="qwiki-extension-hide">`;
                 else if(child.tagName === "H3")
-                  return `<h3 class="qwiki-extension-heading3">${child.innerText}</h3>`;
+                  return `<h3 class="qwiki-extension-heading3" style="color: ${qwikiColorPalette.subHeadingH3} !important;">${child.innerText}</h3>`;
                 else if(child.tagName === "UL")
-                  return `<ul class="qwiki-extension-para-graph">${child.innerText}</ul>`;
+                  return `<ul class="qwiki-extension-para-graph" style="color: ${qwikiColorPalette.fontColor} !important;">${child.innerText}</ul>`;
                 else return;
               }) 
               .join("")
@@ -200,10 +210,33 @@ function getString(){
   });   
 }
 
-document.addEventListener("dblclick" , getString);
+// document.addEventListener("dblclick" , getString);
 
 // receive message from background.js
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log(request);
+    // console.log("request", request);
+    // console.log("sender", sender);
     getString();
 })
+
+function restore_options() {
+    // Use default value color = 'red' and likesColor = true.
+    console.log("called inside inject restore called");
+    // chrome.storage.sync.clear();
+    chrome.storage.sync.get("colors", function({ colors }) {
+        console.log({colors});
+        // console.log("qcp before", qwikiColorPalette);
+        qwikiColorPalette.paraColor = colors.paraColor;
+        qwikiColorPalette.mainHeading = colors.mainHeading;
+        qwikiColorPalette.closeBackground = colors.closeBackground;
+        qwikiColorPalette.closeColor = colors.closeColor;
+        qwikiColorPalette.subHeading = colors.subHeading;
+        qwikiColorPalette.subHeadingH3 = colors.subHeadingH3;
+        div.style.background = colors.bgColor;
+        // console.log("qcp after", qwikiColorPalette);
+    });
+}
+
+// document.addEventListener('DOMContentLoaded', restore_options);
+$(document).ready(restore_options);
+// restore_options();
