@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    background: #AACCFF;
+    color: #222233;
+}
+
+button{
+    padding: 6px;
+    background: #0a62af;
+    color: #fafafa;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+label{
+    color: #222233;
+}
+
+#custom-set{
+}
+
+#custom-set > h4{
+    margin-bottom: 10px;
+    color: #222233;
+}
+
+#custom-set > div{
+    margin-bottom: 10px;
+}
+
+#custom-set > div > input{
+    width: 20px;
+    border: none;
+    border-radius: 50%;
+    background: #AACCFF;
+}
+
+#custom-set > div input:last-child{
+    vertical-align: middle;
+}
+
+#or{
+    margin: 10px auto;
+}
+
+#save-color-scheme{
+    margin: 5px auto;
+}
