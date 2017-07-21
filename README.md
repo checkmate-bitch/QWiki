@@ -33,10 +33,16 @@ Works on Chrome and all chromium-based browsers.
 ## <a href="#use" id="id3">3. Usage</a>
 
 &nbsp;
+To access features click on Options (humberger icon) on the main popup menu.
+
 There are 3 ways to use QWiki:
 1) Double-Click a word : Works only on single words.
 2) Select a string of words. Right Click on it and select QWiki.
 3) Select a string of words. Hit a hotkey combo of your preferance.
+
+Features:
+1) Double Click to select is optional. Disabled by default. 
+2) Customization in terms of color scheme of the display panel.
 
 &nbsp;
 ![Select Words](https://github.com/checkmate-bitch/QWiki/blob/master/images/screenshots/img2.png "Select Words")
