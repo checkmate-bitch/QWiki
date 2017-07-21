@@ -1,96 +1,90 @@
 .qwiki-extension-panel-h1{
-  font-size: 32px !important;
+    font-size: 32px !important;
 }
 
 .qwiki-extension-panel-h1 > a{
-  font-size: 32px !important;
-  color: #f1f1f1 !important;
-  text-transform: capitalize;
-  text-decoration: none;
-}
-
-.qwiki-extension-panel-h1 > a:hover{
-  color: coral !important;
-  text-decoration: none;
+    font-size: 32px !important;
+    color: #f1f1f1 !important;
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
 .qwiki-extension-close-span{
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  font-size: 20px;
-  text-align: center;
-  background: #166888 !important;
-  border-radius: 50%;
-  margin: 0;
-  padding: 0px;
-  color: white !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  height: 35px;
-  width: 35px;
+    background: none !important;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.qwiki-extension-close-span:hover{
-  color: #166888 !important;
-  background: white !important;
+.qwiki-extension-close-span > span{
+    color: white !important;
+    background: none;
+}
+
+.qwiki-extension-close-span:hover > span{
+    transform: scale(1.2);
 }
 
 .qwiki-extension-handle{
-  bottom: 0;
-  left: 0;
-  cursor: nesw-resize;
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: red;
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
 }
 
 .qwiki-extension-inner-div{
-  position: relative;
-  overflow-y: auto;
-  height: 90%;
-  width: 99%;
-  text-align: justify;
+    position: relative;
+    overflow-y: auto;
+    height: 90%;
+    width: 99%;
+    text-align: justify;
 }
 
 .qwiki-extension-outer-div{
-  position: absolute;
-  right: 0;
-  width: 0;
-  background: #2f4f4f;
-  opacity: 0;
-  overflow: hidden;
-  box-shadow: -8px 5px 20px -4px rgba(122,119,140,0.71);
-  z-index: 99999;
+    position: absolute;
+    right: 0;
+    width: 0;
+    background: #2f4f4f;
+    opacity: 0;
+    overflow: hidden;
+    box-shadow: -8px 5px 20px -4px rgba(122,119,140,0.71);
+    z-index: 99999;
 }
 
 .qwiki-extension-hide{
-  display: none;
+    display: none;
 }
 
 .qwiki-extension-para-graph{
-  margin-bottom: 5px;
-  color: wheat !important;
-  font-size: 14px !important;
-  text-align: justify;
-  text-decoration: none !important;
+    margin-bottom: 5px;
+    color: wheat !important;
+    font-size: 14px !important;
+    text-align: justify;
+    text-decoration: none !important;
 }
 
 .qwiki-extension-heading2{
-  margin-bottom: 5px;
-  cursor: pointer;
-  color: wheat !important;
-  font-size: 22px !important;
-  margin-bottom: 15px !important;
-  text-decoration: none !important;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: wheat !important;
+    font-size: 22px !important;
+    margin-bottom: 15px !important;
+    text-decoration: none !important;
 }
 
 .qwiki-extension-heading3{
-  margin-bottom: 5px;
-  font-size: 17px !important;
-  color: wheat !important;
-  text-decoration: none !important;
+    margin-bottom: 5px;
+    font-size: 17px !important;
+    color: wheat !important;
+    text-decoration: none !important;
 }
